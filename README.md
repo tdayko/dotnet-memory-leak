@@ -45,22 +45,24 @@ Antes de iniciar o monitoramento, identifique o ID do processo da aplicação co
 ```sh
 dotnet-trace ps
 ```
+![image](https://github.com/user-attachments/assets/cbfa518e-f760-4379-a894-61e0cf6f0672)
+
 
 ### 4.2. Monitoramento com dotnet-counters
 
 Para acompanhar o consumo de memória da aplicação, utilize o comando:
 
 ```sh
-dotnet-counters monitor --p <PID>
+dotnet-counters monitor -p <PID>
 ```
 
 Substitua <PID> pelo ID do processo obtido no passo anterior.
 ### 4.3. Captura de Dump com dotnet-dump
 
-Caso a aplicação esteja consumindo muita memória, gere um dump para análise com o comando:
+Gerar um arquivo dump para análisar posteriormente:
 
 ```sh
-dotnet-dump collect --p <PID>
+dotnet-dump collect -p <PID>
 ```
 
 Para analisar o dump, utilize:
@@ -74,12 +76,16 @@ Liste os objetos acumulados na memória com:
 ```
 dumpheap -stat
 ```
+![image](https://github.com/user-attachments/assets/b7d9a06b-0ecb-49f9-918b-9de957f0cab7)
+
 
 Para analisar um objeto específico na memória, use:
 
 ```
 dumpheap -mt <endereço>
 ```
+![image](https://github.com/user-attachments/assets/5499f8f5-a5f3-4f35-9b89-1f0e0a515ad7)
+
 
 ### 4.4. Encontrar a Raiz do Acúmulo de Memória
 
@@ -88,3 +94,5 @@ Para identificar a raiz do vazamento de memória, use o comando:
 ```
 gcroot <endereço>
 ```
+![image](https://github.com/user-attachments/assets/ec14e17c-b1a9-426b-9142-5652424861cb)
+
