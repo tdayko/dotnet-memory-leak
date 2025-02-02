@@ -1,4 +1,4 @@
-# Demonstração de Vazamento de Memória no .NET
+# Analisando vazamento de memória com .NET Diagnostic Tools
 
 ## 1. Visão Geral
 
