@@ -73,8 +73,6 @@ Liste os objetos acumulados na memória com:
 
 ```
 dumpheap -stat
-
-dump-heap
 ```
 
 Para analisar um objeto específico na memória, use:
